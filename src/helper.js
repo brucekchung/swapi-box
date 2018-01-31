@@ -3,8 +3,12 @@ export default class Cleaner {
     this.data = data
   }
 
-  format(data) {
-    return data.opening_crawl
+  async apiCall() {
+    const randomMovie = this.randomMovie()
+    const url = `https://swapi.co/api/films/${randomMovie}/`
+    const response = await fetch(url)
+    
+    return await response.json()
   }
 
   randomMovie() {
@@ -13,13 +17,15 @@ export default class Cleaner {
 
   movie(data) {
     const prologue = data.opening_crawl
-    const year = data.release_date
+    const year = data.release_date.split('-')[0]
     const title = data.title
+    const episode = data.episode_id
 
     return {
       prologue,
       year,
-      title
+      title,
+      episode
     }
   }
 }

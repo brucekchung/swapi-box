@@ -1,40 +1,38 @@
 import React, { Component } from 'react'
-import './App.css'
 import Cleaner from '../../helper'
+import './App.css'
 
 //components
-import Prologue from '../Prologue/Prologue'
 import Banner from '../Banner/Banner'
+import Nav from '../Nav/Nav'
+import Main from '../Main/Main'
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.cleaner
-    this.state = {}
+    this.state = {
+      load: {}
+    }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.cleaner = new Cleaner()
-    this.apiCall()
+    const data = await this.cleaner.apiCall()
+
+    this.setState({ load: this.cleaner.movie(data) })
   }
 
-  apiCall() {
-    const randomMovie = this.cleaner.randomMovie()
-    let movie
-
-    fetch(`https://swapi.co/api/films/${randomMovie}/`)
-      .then(data => data.json())
-      .then(data => movie = this.cleaner.movie(data))
-      //.then(data => console.log('movie ', movie))
-      .then(data => this.setState({load: movie}))
+  getStuff(e) {
+    console.log(e.target.id)
   }
 
   render() {
     return (
-      <div>
+      <section>
         <Banner />
-        <Prologue prologue={this.state.load} />
-      </div>
+        <Nav getStuff={this.getStuff}/>
+        <Main prologueData={this.state.load}/>
+      </section>
     )
   }
 }

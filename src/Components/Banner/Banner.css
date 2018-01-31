@@ -1,8 +1,9 @@
 .Banner-header {
   background-color: black;
-  height: 150px;
-  padding: 20px;
+  height: 100px;
+  padding: 10px;
   color: white;
+  z-index: 2
 }
 
 .Banner-header h1 {
@@ -11,8 +12,8 @@
 }
 
 .Banner-header img {
-  height: 100px;
-  width: 200px;
+  height: 90px;
+  width: 180px;
   margin: 0 auto;
   display: block;
 }
