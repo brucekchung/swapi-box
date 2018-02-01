@@ -1,25 +1,55 @@
-export default class Cleaner {
-  constructor(data) {
-    this.data = data
+import { getSingleUrl } from './api'
+
+export const cleanData = (data, type) => {
+  const types = {
+    films: films,
+    people: people,
+    planets: planets,
+    vehicles: vehicles
   }
 
-  format(data) {
-    return data.opening_crawl
-  }
+  return types[type](data)
+}
 
-  randomMovie() {
-    return Math.floor(Math.random() * 7 + 1)
-  }
+const films = (data) => {
+  const prologue = data.opening_crawl
+  const year = data.release_date.split('-')[0]
+  const title = data.title
+  const episode = data.episode_id
 
-  movie(data) {
-    const prologue = data.opening_crawl
-    const year = data.release_date
-    const title = data.title
+  return {
+    prologue,
+    year,
+    title,
+    episode
+  }
+}
+
+const people = async (data) => {
+  const peopleArray = data.results.map(async (person) => {
+    const name = person.name
+    const homeworldData = await getSingleUrl(person.homeworld)
+    const homeworld = homeworldData.name
+    const population = homeworldData.population
+    const speciesData = await getSingleUrl(person.species)
+    const species = speciesData.name
 
     return {
-      prologue,
-      year,
-      title
+      name,
+      homeworld,
+      species,
+      population
     }
-  }
+  })
+
+  return await Promise.all(peopleArray)
+}
+
+const planets = (data) => {
+  console.log(data.results)
+}
+
+const vehicles = (data) => {
+  console.log(data.results)
+  
 }
