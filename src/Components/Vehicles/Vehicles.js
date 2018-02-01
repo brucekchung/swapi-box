@@ -1,12 +1,12 @@
 import React from 'react'
 import Card from '../Card/Card'
-//css?
 
 const Vehicles = ({ vehicleData }) => {
-  const cards = vehicleData.map(card => ( <Card data={card}/> ))
+  const cards = vehicleData.map((card, index) => 
+    ( <Card key={`vehicle${index}`} data={card} type="vehicleCard" /> ))
 
   return (
-    <div>
+    <div className="Vehicles">
       { cards }
     </div>
   ) 

@@ -1,12 +1,12 @@
 import React from 'react'
 import Card from '../Card/Card'
-//import css
 
 const Planets = ({ planetData }) => {
-  const cards = planetData.map(card => ( <Card data={card}/> ))
+  const cards = planetData.map((card, index) => 
+    ( <Card key={`planet${index}`} data={card} type="planetCard"/> ))
   
   return (
-    <div>
+    <div className="Planets">
       { cards }
     </div>
   )
