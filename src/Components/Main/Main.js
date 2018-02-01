@@ -25,18 +25,18 @@ const Main = ({ allData }) => (
     { 
       allData.planets &&
       <Route path='/Planets' render={() => 
-        ( <Planets /> )} />
+        ( <Planets planetData={allData.planets} /> )} />
     }
 
     { 
       allData.vehicles &&
       <Route path='/Vehicles' render={() => 
-        ( <Vehicles /> )} />
+        ( <Vehicles vehicleData={allData.vehicles} /> )} />
     }
 
     <Route path='/Favorites' render={() => 
       ( <Favorites /> )} />
-      
+
   </Switch>
 )
 
