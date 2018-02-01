@@ -1,11 +1,15 @@
 import React from 'react'
-//import Card from '../Card/Card'
-import './People.css'
+import Card from '../Card/Card'
 
-const People = (props) => (
-  <div className="People">
-    People container
-  </div>
-)
+const People = ({ peopleData }) => {
+  const cards = peopleData.map((card, index) => 
+    ( <Card key={`people${index}`} data={card} type="peopleCard" /> ))
+
+  return (
+    <div className="People">
+      { cards }
+    </div>
+  )
+}
 
 export default People

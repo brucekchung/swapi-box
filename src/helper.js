@@ -45,11 +45,36 @@ const people = async (data) => {
   return await Promise.all(peopleArray)
 }
 
-const planets = (data) => {
-  console.log(data.results)
+const planets = async (data) => {
+  const planetArray = data.results.map(async (planet) => {
+    const { name, terrain, population, climate } = planet
+    const getResidents = planet.residents.map(async (resident) => await getSingleUrl(resident))
+    const residentData = await Promise.all(getResidents)
+    const residents = residentData.map(resident => resident.name)
+
+    return {
+      name,
+      terrain,
+      population,
+      climate,
+      residents
+    }
+  })
+
+  return await Promise.all(planetArray)
 }
 
-const vehicles = (data) => {
-  console.log(data.results)
+const vehicles = (data) => {  
+  const vehicleArray = data.results.map(vehicle => {
+    const { name, model, vehicle_class, passengers } = vehicle
   
+    return {
+      name,
+      model,
+      vehicle_class,
+      passengers
+    }
+  })
+  
+  return vehicleArray
 }

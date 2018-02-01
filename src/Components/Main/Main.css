@@ -1,0 +1,7 @@
+.People,
+.Planets,
+.Vehicles,
+.Favorites {
+  display: flex;
+  flex-wrap: wrap;
+}
