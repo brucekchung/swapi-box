@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Cleaner from '../../helper'
-import getStarWarsData from '../../api'
+import { cleanData } from '../../helper'
+import { getStarWarsData } from '../../api'
 import './App.css'
 
 //components
@@ -12,27 +12,24 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      films: {}
+      films: {},
+      people: []
     }
   }
 
   componentDidMount() {
-    this.cleaner = new Cleaner()
     this.getApiData('films')
   }
 
   async getApiData(type) {
     const data = await getStarWarsData(type)
-    const types = {
-      films: this.cleaner.films(data),
-      people: this.cleaner.people(data)
-    }
+    const formatData = cleanData(data, type)
 
-    this.setState({ [type]: types[type] })
+    this.setState({ [type]: formatData })
   }
 
-  getStuff = async (e) => {
-    const type = e.target
+  getStuff = (e) => {
+    const type = e.target.id
     this.getApiData(type)
   }
 
