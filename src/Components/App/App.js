@@ -23,12 +23,12 @@ class App extends Component {
 
   async getApiData(type) {
     const data = await getStarWarsData(type)
-    const formatData = cleanData(data, type)
+    const formatData = await cleanData(data, type)
 
     this.setState({ [type]: formatData })
   }
 
-  getStuff = (e) => {
+  handleClick = (e) => {
     const type = e.target.id
     this.getApiData(type)
   }
@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <section>
         <Banner />
-        <Nav getStuff={this.getStuff}/>
+        <Nav handleClick={this.handleClick}/>
         <Main films={this.state.films}/>
       </section>
     )

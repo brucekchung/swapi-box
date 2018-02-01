@@ -1,3 +1,4 @@
+import { getSingleUrl } from './api'
 
 export const cleanData = (data, type) => {
   const types = {
@@ -24,17 +25,31 @@ const films = (data) => {
   }
 }
 
-const people = (data) => {
-  console.log(data.results)
-  const name = data.name
-  const homeworld = data.homeworld
-  const species = data.species
-  //const population
+const people = async (data) => {
+  const peopleArray = data.results.map(async (person) => {
+    const name = person.name
+    const homeworldData = await getSingleUrl(person.homeworld)
+    const homeworld = homeworldData.name
+    const population = homeworldData.population
+    const speciesData = await getSingleUrl(person.species)
+    const species = speciesData.name
 
-  return {
-    name,
-    homeworld,
-    species,
-    //population
-  }
+    return {
+      name,
+      homeworld,
+      species,
+      population
+    }
+  })
+
+  return await Promise.all(peopleArray)
+}
+
+const planets = (data) => {
+  console.log(data.results)
+}
+
+const vehicles = (data) => {
+  console.log(data.results)
+  
 }

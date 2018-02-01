@@ -7,3 +7,9 @@ export const getStarWarsData = async (type) => {
 }
 
 const generateRandom = () => Math.floor(Math.random() * 7 + 1)
+
+export const getSingleUrl = async (url) => {
+  const response = await fetch(url)
+
+  return await response.json()
+}
