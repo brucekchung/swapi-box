@@ -8,10 +8,10 @@ import Planets from '../Planets/Planets'
 import Vehicles from '../Vehicles/Vehicles'
 import Favorites from '../Favorites/Favorites'
 
-const Main = ({ prologueData }) => (
+const Main = ({ films }) => (
     <Switch>
       <Route exact path='/' render={() => (
-          <Prologue load={prologueData} />
+          <Prologue load={films} />
         )}
       />
       <Route path='/People' render={() => (

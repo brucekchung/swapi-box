@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Cleaner from '../../helper'
+import getStarWarsData from '../../api'
 import './App.css'
 
 //components
@@ -11,19 +12,28 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      load: {}
+      films: {}
     }
   }
 
-  async componentDidMount() {
+  componentDidMount() {
     this.cleaner = new Cleaner()
-    const data = await this.cleaner.apiCall()
-
-    this.setState({ load: this.cleaner.movie(data) })
+    this.getApiData('films')
   }
 
-  getStuff(e) {
-    console.log(e.target.id)
+  async getApiData(type) {
+    const data = await getStarWarsData(type)
+    const types = {
+      films: this.cleaner.films(data),
+      people: this.cleaner.people(data)
+    }
+
+    this.setState({ [type]: types[type] })
+  }
+
+  getStuff = async (e) => {
+    const type = e.target
+    this.getApiData(type)
   }
 
   render() {
@@ -31,7 +41,7 @@ class App extends Component {
       <section>
         <Banner />
         <Nav getStuff={this.getStuff}/>
-        <Main prologueData={this.state.load}/>
+        <Main films={this.state.films}/>
       </section>
     )
   }
