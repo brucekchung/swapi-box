@@ -64,8 +64,7 @@ const planets = async (data) => {
   return await Promise.all(planetArray)
 }
 
-const vehicles = (data) => {
-  console.log(data.results)
+const vehicles = (data) => {  
   const vehicleArray = data.results.map(vehicle => {
     const { name, model, vehicle_class, passengers } = vehicle
   

@@ -11,9 +11,7 @@ import Main from '../Main/Main'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      films: {}
-    }
+    this.state = {}
   }
 
   componentDidMount() {
@@ -37,7 +35,7 @@ class App extends Component {
       <section>
         <Banner />
         <Nav handleClick={this.handleClick}/>
-        <Main films={this.state.films}/>
+        <Main allData={this.state}/>
       </section>
     )
   }

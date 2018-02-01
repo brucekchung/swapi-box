@@ -1,10 +1,13 @@
 import React from 'react'
-//import Card from '../Card/Card'
+import Card from '../Card/Card'
 import './People.css'
 
-const People = (props) => (
+const People = ({ peopleData }) => (
   <div className="People">
     People container
+    {
+      console.log('entries', peopleData)
+    }
   </div>
 )
 
