@@ -30,12 +30,23 @@ class App extends Component {
     this.getApiData(type)
   }
 
+  toggleFavorite = (e) => {
+    const classes = e.target.closest('div').classList
+    const isFavorite = classes.value.includes('favorite')
+
+    if (isFavorite) {
+      classes.remove('favorite')
+    } else {
+      classes.add('favorite')
+    }
+  }
+
   render() {
     return (
       <section>
         <Banner />
-        <Nav handleClick={this.handleClick}/>
-        <Main allData={this.state}/>
+        <Nav handleClick={this.handleClick} />
+        <Main allData={this.state} favorite={this.toggleFavorite} />
       </section>
     )
   }

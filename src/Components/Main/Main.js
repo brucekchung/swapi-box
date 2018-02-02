@@ -9,30 +9,30 @@ import Planets from '../Planets/Planets'
 import Vehicles from '../Vehicles/Vehicles'
 import Favorites from '../Favorites/Favorites'
 
-const Main = ({ allData }) => (
+const Main = ({ allData, favorite }) => (
   <Switch>
     { 
       allData.films &&
       <Route exact path='/' render={() => 
-        ( <Prologue filmData={allData.films}/> )} />
+        ( <Prologue filmData={allData.films} favorite={favorite}/> )} />
     }
 
     { 
       allData.people &&
       <Route path='/People' render={() => 
-        ( <People peopleData={allData.people} /> )} />
+        ( <People peopleData={allData.people} favorite={favorite}/> )} />
     }
 
     { 
       allData.planets &&
       <Route path='/Planets' render={() => 
-        ( <Planets planetData={allData.planets} /> )} />
+        ( <Planets planetData={allData.planets} favorite={favorite}/> )} />
     }
 
     { 
       allData.vehicles &&
       <Route path='/Vehicles' render={() => 
-        ( <Vehicles vehicleData={allData.vehicles} /> )} />
+        ( <Vehicles vehicleData={allData.vehicles} favorite={favorite}/> )} />
     }
 
     <Route path='/Favorites' render={() => 
