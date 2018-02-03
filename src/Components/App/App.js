@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { getStarWarsData } from '../../api'
 import { cleanData } from '../../cleaner'
-import { addFavorite, removeFavorite } from '../../helper'
+import { checkFavorite, addFavorite, removeFavorite } from '../../helper'
 import './App.css'
 
 //components
@@ -35,14 +35,12 @@ class App extends Component {
 
   toggleFavorite = (e) => {
     const name = e.target.closest('div').id
-    const classes = e.target.closest('div').classList
-    const isFavorite = classes.value.includes('favorite')
+    const isFavorite = checkFavorite(this.state, name)
 
     if (isFavorite) {
-      classes.remove('favorite')
       this.setState(removeFavorite(this.state, name))
     } else {
-      classes.add('favorite')
+      //also need to set favorite in state.type
       this.setState(addFavorite(this.state, name))
     }
   }
