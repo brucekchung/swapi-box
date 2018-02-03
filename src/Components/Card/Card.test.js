@@ -1,17 +1,16 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import App from './App'
+import Card from './Card'
+//cypress
 
-describe('App', () => {
+describe('Card', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallow(<App />)
-    //window.fetch = jest.fn()
+    wrapper = shallow(<Card />)
   })
 
   it('should exist', () => {
     expect(wrapper).toBeDefined()
   })
 })
-

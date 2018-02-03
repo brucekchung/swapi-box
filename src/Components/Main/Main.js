@@ -36,7 +36,7 @@ const Main = ({ allData, favorite }) => (
     }
 
     <Route path='/Favorites' render={() => 
-      ( <Favorites /> )} />
+      ( <Favorites favoriteData={allData.favorites} favorite={favorite}/> )} />
 
   </Switch>
 )
