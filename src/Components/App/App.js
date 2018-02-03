@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { cleanData } from '../../helper'
 import { getStarWarsData } from '../../api'
+import { cleanData } from '../../cleaner'
+import { addFavorite, removeFavorite } from '../../helper'
 import './App.css'
 
 //components
@@ -11,7 +12,9 @@ import Main from '../Main/Main'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      favorites: []
+    }
   }
 
   componentDidMount() {
@@ -30,12 +33,26 @@ class App extends Component {
     this.getApiData(type)
   }
 
+  toggleFavorite = (e) => {
+    const name = e.target.closest('div').id
+    const classes = e.target.closest('div').classList
+    const isFavorite = classes.value.includes('favorite')
+
+    if (isFavorite) {
+      classes.remove('favorite')
+      this.setState(removeFavorite(this.state, name))
+    } else {
+      classes.add('favorite')
+      this.setState(addFavorite(this.state, name))
+    }
+  }
+
   render() {
     return (
       <section>
         <Banner />
-        <Nav handleClick={this.handleClick}/>
-        <Main allData={this.state}/>
+        <Nav handleClick={this.handleClick} />
+        <Main allData={this.state} favorite={this.toggleFavorite} />
       </section>
     )
   }

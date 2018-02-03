@@ -1,12 +1,15 @@
 import React from 'react'
 import './Prologue.css'
+import Theme from '../../assets/sounds/Theme.mp3'
+//amazon s3 to host links to assets
 
 const Prologue = ({ filmData }) => {
   const { episode, year, title, prologue } = filmData
 
   return (
-    <div className="main">
+    <div className="main"> 
       <div className="fade"></div>
+      <audio src={Theme} autoPlay />
       <section className="star-wars">
         <div className="crawl">
           <div className="title">
