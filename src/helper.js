@@ -5,7 +5,8 @@ const findMatch = (state, name) => {
     return cardArr
   }, [])
 
-  return allCards.filter(card => card.name === name)
+  const match = allCards.filter(card => card.name === name)
+  return match
 }
 
 export const checkFavorite = (state, name) => {
@@ -30,10 +31,3 @@ export const removeFavorite = (state, name) => {
   return {'favorites': [...remaining]}
 }
 
-export const isFavoriteCard = (entries) => {
-  const favoriteData = entries.slice(entries.length - 1)
-  //console.log('favorite', favoriteData[0][1])
-  if(favoriteData[0][1] === true) {
-    return 'favorite'
-  } else return ''
-}

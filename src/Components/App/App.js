@@ -23,13 +23,22 @@ class App extends Component {
 
   componentDidMount() {
     this.getApiData('films')
+    for (var i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i)
+      const data = JSON.parse(localStorage.getItem(key))
+
+      this.setState({[key]: data})
+    }
   }
 
   async getApiData(type) {
-    const data = await getStarWarsData(type)
-    const formatData = await cleanData(data, type)
+    if (!localStorage[type]) {
+      const data = await getStarWarsData(type)
+      const formatData = await cleanData(data, type)
 
-    this.setState({ [type]: formatData })
+      localStorage.setItem([type], JSON.stringify(formatData))
+      this.setState({ [type]: formatData })
+    }
   }
 
   handleClick = (e) => {
@@ -50,7 +59,6 @@ class App extends Component {
     if (isFavorite) {
       this.setState(removeFavorite(this.state, name))
     } else {
-      //also need to set favorite in state.type
       this.setState(addFavorite(this.state, name))
     }
   }
