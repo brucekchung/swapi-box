@@ -2,7 +2,6 @@ import React from 'react'
 import Card from '../Card/Card'
 
 const Favorites = ({ favoriteData, favorite }) => {
-  console.log('favorites, ', favoriteData)
   const cards = favoriteData.map((card, index) => 
     ( <Card key={`favorite${index}`} 
             data={card} 
@@ -10,7 +9,7 @@ const Favorites = ({ favoriteData, favorite }) => {
             favorite={favorite}/> ))
 
   return (
-    <div>
+    <div className="Favorites">
       {cards}
     </div>
   )

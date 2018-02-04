@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { getStarWarsData } from '../../api'
 import { cleanData } from '../../cleaner'
 import { checkFavorite, addFavorite, removeFavorite } from '../../helper'
+import hyperspace from '../../assets/images/hyper-space.gif'
+import lightsaber from '../../assets/images/lightsaber.gif'
+import trench from '../../assets/images/trench.gif'
 import './App.css'
 
 //components
@@ -13,7 +16,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      favorites: []
+      favorites: [],
+      showImage: false,
     }
   }
 
@@ -31,6 +35,12 @@ class App extends Component {
   handleClick = (e) => {
     const type = e.target.id
     this.getApiData(type)
+
+    this.setState({showImage: true})
+    setTimeout(() => {
+      this.setState({showImage: false})
+    }, 3500)
+    this.imageSource(type)
   }
 
   toggleFavorite = (e) => {
@@ -45,11 +55,21 @@ class App extends Component {
     }
   }
 
+  imageSource(type) {
+    if(type === 'planets') this.image = hyperspace
+    if(type === 'people') this.image = lightsaber
+    if(type === 'vehicles') this.image = trench
+  }
+
   render() {
     return (
-      <section>
+      <section className="content">
         <Banner />
         <Nav handleClick={this.handleClick} />
+        {
+          this.state.showImage &&
+          <img className="load-image" src={this.image} alt="starwars"/>
+        }
         <Main allData={this.state} favorite={this.toggleFavorite} />
       </section>
     )

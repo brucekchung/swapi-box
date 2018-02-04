@@ -71,7 +71,7 @@ const vehicles = (data) => {
     return {
       name,
       model,
-      vehicle_class,
+      'vehicle class': vehicle_class,
       passengers
     }
   })

@@ -1,12 +1,36 @@
 .Card {
   color: white;
   height: 300px;
-  width: 200px;
+  width: 210px;
   border: 1px solid white;
+  border-radius: 20px;
   margin: 20px;
+  padding: 10px;
+  overflow: scroll;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.Card h2 {
   text-align: center;
 }
 
+.Card p {
+  line-height: 1.3
+}
+
 .favorite {
+  border: 1px solid yellow;
+}
+
+.category {
+  font-weight: 800;
   color: grey;
+}
+
+.answer {
+  clear: both;
+  float: right;
+  display: block;
+  text-align: right;
 }
