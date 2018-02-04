@@ -29,7 +29,7 @@ describe('cleaner', () => {
 
     cleanData(data, 'people')
     expect(window.fetch).toHaveBeenCalled()
-  })  
+  })
 
   it('should make a fetch call when "planets" is passed to cleanData', () => {
     const data = {
