@@ -2,6 +2,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import App from './App'
+import 'jest-localstorage-mock';
 
 describe('App', () => {
   let wrapper
@@ -35,7 +36,7 @@ describe('App', () => {
       "model": "Digger Crawler", 
       "name": "Sand Crawler", 
       "passengers": "30", 
-      "vehicle_class": "wheeled",
+      "vehicle class": "wheeled",
     }]
 
     wrapper.setState({vehicles: vehicleData})

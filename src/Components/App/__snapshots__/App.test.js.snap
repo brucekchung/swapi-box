@@ -22,15 +22,18 @@ ShallowWrapper {
         <Nav
           handleClick={[Function]}
 />,
+        false,
         <Main
           allData={
                     Object {
                               "favorites": Array [],
+                              "showImage": false,
                             }
           }
           favorite={[Function]}
 />,
       ],
+      "className": "content",
     },
     "ref": null,
     "rendered": Array [
@@ -54,6 +57,7 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      false,
       Object {
         "instance": null,
         "key": undefined,
@@ -61,6 +65,7 @@ ShallowWrapper {
         "props": Object {
           "allData": Object {
             "favorites": Array [],
+            "showImage": false,
           },
           "favorite": [Function],
         },
@@ -82,15 +87,18 @@ ShallowWrapper {
           <Nav
             handleClick={[Function]}
 />,
+          false,
           <Main
             allData={
                         Object {
                                     "favorites": Array [],
+                                    "showImage": false,
                                   }
             }
             favorite={[Function]}
 />,
         ],
+        "className": "content",
       },
       "ref": null,
       "rendered": Array [
@@ -114,6 +122,7 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
+        false,
         Object {
           "instance": null,
           "key": undefined,
@@ -121,6 +130,7 @@ ShallowWrapper {
           "props": Object {
             "allData": Object {
               "favorites": Array [],
+              "showImage": false,
             },
             "favorite": [Function],
           },

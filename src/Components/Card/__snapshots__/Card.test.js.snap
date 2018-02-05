@@ -27,24 +27,41 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <button
+          className="favorite-btn"
+          onClick={[Function]}
+/>,
         <h2>
           Digger Crawler
 </h2>,
         Array [
-          <p>
-             
-            name
-            Sand Crawler
-             
-</p>,
+          <Entry
+            entry={
+                        Array [
+                                    "name",
+                                    "Sand Crawler",
+                                  ]
+            }
+/>,
         ],
       ],
       "className": "Card ",
       "id": "Digger Crawler",
-      "onClick": [Function],
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "favorite-btn",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "button",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -59,25 +76,16 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": "testCard0",
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": Array [
-            " ",
-            Array [
-              "name",
-              "Sand Crawler",
-            ],
-            " ",
+          "entry": Array [
+            "name",
+            "Sand Crawler",
           ],
         },
         "ref": null,
-        "rendered": Array [
-          " ",
-          "name",
-          "Sand Crawler",
-          " ",
-        ],
-        "type": "p",
+        "rendered": null,
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -89,24 +97,41 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <button
+            className="favorite-btn"
+            onClick={[Function]}
+/>,
           <h2>
             Digger Crawler
 </h2>,
           Array [
-            <p>
-               
-              name
-              Sand Crawler
-               
-</p>,
+            <Entry
+              entry={
+                            Array [
+                                          "name",
+                                          "Sand Crawler",
+                                        ]
+              }
+/>,
           ],
         ],
         "className": "Card ",
         "id": "Digger Crawler",
-        "onClick": [Function],
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "favorite-btn",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "button",
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -121,25 +146,16 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "testCard0",
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": Array [
-              " ",
-              Array [
-                "name",
-                "Sand Crawler",
-              ],
-              " ",
+            "entry": Array [
+              "name",
+              "Sand Crawler",
             ],
           },
           "ref": null,
-          "rendered": Array [
-            " ",
-            "name",
-            "Sand Crawler",
-            " ",
-          ],
-          "type": "p",
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",

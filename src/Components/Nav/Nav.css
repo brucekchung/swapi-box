@@ -22,9 +22,9 @@ a {
 }
 
 a:hover {
-  opacity: 0.9;
+  box-shadow: 0 3px #EF4836;
 }
 
 .active {
-  box-shadow: 0 0 35px 1px red;
+  color: #EF4836;
 }

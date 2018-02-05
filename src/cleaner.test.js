@@ -63,7 +63,7 @@ describe('cleaner', () => {
       "model": "Digger Crawler", 
       "name": "Sand Crawler", 
       "passengers": "30", 
-      "vehicle_class": "wheeled"
+      "vehicle class": "wheeled"
     }]
     const actual = cleanData(data, 'vehicles')
 

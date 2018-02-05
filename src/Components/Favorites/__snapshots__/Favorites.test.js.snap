@@ -39,6 +39,7 @@ ShallowWrapper {
           type="favoriteCard"
 />,
       ],
+      "className": "Favorites",
     },
     "ref": null,
     "rendered": Array [
@@ -79,6 +80,7 @@ ShallowWrapper {
             type="favoriteCard"
 />,
         ],
+        "className": "Favorites",
       },
       "ref": null,
       "rendered": Array [

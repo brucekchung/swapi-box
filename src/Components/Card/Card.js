@@ -3,6 +3,13 @@ import Entry from '../Entry/Entry'
 import './Card.css'
 import { func, arrayOf, string, object } from 'prop-types'
 
+// const playSound = (path) => {
+//   const audioElement = document.createElement('audio');
+//   audioElement.setAttribute('src', path);
+//   audioElement.play();
+// }
+//onclick={playSound(lightsaber)}
+
 const Card = ({ data, type, favorite }) => {
   const entries = Object.entries(data)
   const name = entries.shift()
@@ -20,7 +27,7 @@ const Card = ({ data, type, favorite }) => {
 
   return (
     <div className={`Card ${isFavoriteCard()}`} id={name[1]}>
-      <button className="favorite-btn" onClick={favorite} />
+      <button className="favorite-btn" onClick={favorite}/>
       <h2>{name[1]}</h2>
       { info }
     </div>

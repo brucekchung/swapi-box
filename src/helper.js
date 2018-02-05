@@ -1,12 +1,13 @@
 const findMatch = (state, name) => {
+  //console.log('state', state)
   const allKeys = Object.keys(state).slice(2)
+  //console.log('allkeys', allKeys)
   const allCards = allKeys.reduce((cardArr, key) => {
     cardArr.push(...state[key])
     return cardArr
   }, [])
 
-  const match = allCards.filter(card => card.name === name)
-  return match
+  return allCards.filter(card => card.name === name)
 }
 
 export const checkFavorite = (state, name) => {

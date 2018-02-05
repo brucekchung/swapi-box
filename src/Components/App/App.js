@@ -8,6 +8,8 @@ import { shape, arrayOf, object, bool } from 'prop-types'
 import hyperspace from '../../assets/images/hyper-space.gif'
 import lightsaber from '../../assets/images/lightsaber.gif'
 import trench from '../../assets/images/trench.gif'
+import lightsaberOn from '../../assets/sounds/Lightsaber-on.mp3'
+import lightsaberOff from '../../assets/sounds/Lightsaber-off.mp3'
 import './App.css'
 
 //components
@@ -60,8 +62,10 @@ class App extends Component {
     const isFavorite = checkFavorite(this.state, name)
 
     if (isFavorite) {
+      this.playSound(lightsaberOff)
       this.setState(removeFavorite(this.state, name))
     } else {
+      this.playSound(lightsaberOn)
       this.setState(addFavorite(this.state, name))
     }
   }
@@ -70,6 +74,12 @@ class App extends Component {
     if (type === 'planets') this.image = hyperspace
     if (type === 'people') this.image = lightsaber
     if (type === 'vehicles') this.image = trench
+  }
+
+  playSound(path) {
+    const audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', path);
+    audioElement.play();
   }
 
   render() {
