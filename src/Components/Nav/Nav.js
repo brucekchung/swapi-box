@@ -1,6 +1,7 @@
 import React from 'react'
 import './Nav.css'
 import { NavLink } from 'react-router-dom'
+import { func } from 'prop-types'
 
 const Nav = ({ handleClick }) => (
   <ul className="Nav">
@@ -10,5 +11,9 @@ const Nav = ({ handleClick }) => (
     <li><NavLink to='/Favorites' id="favorites" activeClassName="active">Favorites</NavLink></li>
   </ul>
 )
+
+Nav.propTypes = {
+  onClick: func
+}
 
 export default Nav
