@@ -1,6 +1,7 @@
 import React from 'react'
 import Entry from '../Entry/Entry'
 import './Card.css'
+import { func, arrayOf, string } from 'prop-types'
 
 const Card = ({ data, type, favorite }) => {
   const entries = Object.entries(data)
@@ -24,6 +25,13 @@ const Card = ({ data, type, favorite }) => {
       { info }
     </div>
   )
+}
+
+Card.propTypes = {
+  entry: arrayOf(string),
+  className: string,
+  id: string,
+  onClick: func,
 }
 
 export default Card

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import './Main.css'
+import { object, func } from 'prop-types'
 
 //components
 import Prologue from '../Prologue/Prologue'
@@ -40,5 +41,10 @@ const Main = ({ allData, favorite }) => (
 
   </Switch>
 )
+
+Main.propTypes = {
+  favorite: func.isRequired,
+  allData: object.isRequired,
+}
 
 export default Main

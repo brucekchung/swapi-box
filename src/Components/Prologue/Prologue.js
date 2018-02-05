@@ -1,7 +1,6 @@
 import React from 'react'
 import './Prologue.css'
 import Theme from '../../assets/sounds/Theme.mp3'
-//amazon s3 to host links to assets
 
 const Prologue = ({ filmData }) => {
   const { episode, year, title, prologue } = filmData

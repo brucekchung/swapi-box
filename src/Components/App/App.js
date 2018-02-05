@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getStarWarsData } from '../../api'
 import { cleanData } from '../../cleaner'
 import { checkFavorite, addFavorite, removeFavorite } from '../../helper'
+import { shape, arrayOf, object, bool } from 'prop-types'
 
 //style
 import hyperspace from '../../assets/images/hyper-space.gif'
@@ -84,6 +85,13 @@ class App extends Component {
       </section>
     )
   }
+}
+
+App.propTypes = {
+  state: shape({
+    favorites: arrayOf(object).isRequired,
+    showImage: bool.isRequired
+  })
 }
 
 export default App
