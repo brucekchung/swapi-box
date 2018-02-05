@@ -5,12 +5,13 @@ const findMatch = (state, name) => {
     return cardArr
   }, [])
 
-  return allCards.filter(card => card.name === name)
+  const match = allCards.filter(card => card.name === name)
+  return match
 }
 
 export const checkFavorite = (state, name) => {
   const match = findMatch(state, name)
-  //console.log('checkFavorite, ', match[0].favorite)
+
   return match[0].favorite
 }
 
@@ -29,3 +30,4 @@ export const removeFavorite = (state, name) => {
 
   return {'favorites': [...remaining]}
 }
+

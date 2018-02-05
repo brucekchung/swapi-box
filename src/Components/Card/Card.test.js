@@ -1,16 +1,21 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Card from './Card'
-//cypress
 
 describe('Card', () => {
-  let wrapper
+  const props = {
+    key: 14,
+    data: {
+      "model": "Digger Crawler", 
+      "name": "Sand Crawler",
+    },
+    type: 'testCard',
+    favorite: () => {},
+  }
 
-  beforeEach(() => {
-    wrapper = shallow(<Card />)
-  })
-
-  it('should exist', () => {
-    expect(wrapper).toBeDefined()
+  it('should match the snapshot', () => {
+    const wrapper = shallow(<Card {...props}/>)
+    
+    expect(wrapper).toMatchSnapshot()
   })
 })

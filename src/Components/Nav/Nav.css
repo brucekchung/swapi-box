@@ -6,16 +6,25 @@
   color: white;
   background-color: black;
   padding-left: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 .Nav li {
   font-size: 1.5em;
   display: inline-block;
-  margin-left: 80px;
+  text-decoration: none;
 }
 
-.Nav .right li {
-  float: right;
-  margin-left: 0;
-  margin-right: 80px;
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+.active {
+  box-shadow: 0 0 35px 1px red;
 }

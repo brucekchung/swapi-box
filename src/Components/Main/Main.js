@@ -18,19 +18,19 @@ const Main = ({ allData, favorite }) => (
     }
 
     { 
-      allData.people &&
+      allData.people && !allData.showImage &&
       <Route path='/People' render={() => 
         ( <People peopleData={allData.people} favorite={favorite}/> )} />
     }
 
     { 
-      allData.planets &&
+      allData.planets && !allData.showImage &&
       <Route path='/Planets' render={() => 
         ( <Planets planetData={allData.planets} favorite={favorite}/> )} />
     }
 
     { 
-      allData.vehicles &&
+      allData.vehicles && !allData.showImage &&
       <Route path='/Vehicles' render={() => 
         ( <Vehicles vehicleData={allData.vehicles} favorite={favorite}/> )} />
     }

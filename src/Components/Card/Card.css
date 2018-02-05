@@ -1,12 +1,46 @@
 .Card {
   color: white;
   height: 300px;
-  width: 200px;
+  width: 210px;
   border: 1px solid white;
+  border-radius: 20px;
   margin: 20px;
+  padding: 10px;
+  overflow: scroll;
+  background-color: black;
+  opacity: 0.73;
+}
+
+.Card h2 {
   text-align: center;
 }
 
+.Card p {
+  line-height: 1.3
+}
+
 .favorite {
+  border: 2px solid white;
+  box-shadow: 0 0 35px 1px red;
+  opacity: 0.9;
+}
+
+.category {
+  font-weight: 800;
   color: grey;
+}
+
+.answer {
+  clear: both;
+  float: right;
+  display: block;
+  text-align: right;
+}
+
+.favorite-btn {
+  box-shadow: 0 0 25px 2px red;
+}
+
+.favorite .favorite-btn {
+  box-shadow: none;
 }
