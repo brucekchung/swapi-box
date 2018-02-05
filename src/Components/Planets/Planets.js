@@ -20,6 +20,7 @@ Planets.propTypes = {
   data: arrayOf(object),
   type: string,
   favorite: func,
+  planetData: arrayOf(object)
 }
 
 export default Planets

@@ -6,7 +6,7 @@ export const getStarWarsData = async (type) => {
     const response = await fetch(url)
     return await response.json()
     
-  } catch(error) {
+  } catch (error) {
     return 'error'
   }
 }
@@ -18,7 +18,7 @@ export const getSingleUrl = async (url) => {
     const response = await fetch(url)
     return await response.json()
 
-  } catch(error) {
+  } catch (error) {
     return 'error'
   }
 }

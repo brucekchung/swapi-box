@@ -1,4 +1,5 @@
 import React from 'react'
+import { array } from 'prop-types'
 
 const Entry = ({ entry }) => {
   const category = entry[0]
@@ -23,6 +24,10 @@ const Entry = ({ entry }) => {
       <span className="answer">{ answer() }</span>
     </p> 
   )
+}
+
+Entry.propTypes = {
+  entry: array
 }
 
 export default Entry

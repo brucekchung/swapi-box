@@ -20,7 +20,7 @@ class App extends Component {
     super(props)
     this.state = {
       favorites: [],
-      showImage: false,
+      showImage: false
     }
   }
 
@@ -67,9 +67,9 @@ class App extends Component {
   }
 
   imageSource(type) {
-    if(type === 'planets') this.image = hyperspace
-    if(type === 'people') this.image = lightsaber
-    if(type === 'vehicles') this.image = trench
+    if (type === 'planets') this.image = hyperspace
+    if (type === 'people') this.image = lightsaber
+    if (type === 'vehicles') this.image = trench
   }
 
   render() {
