@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { getStarWarsData } from '../../api'
 import { cleanData } from '../../cleaner'
 import { checkFavorite, addFavorite, removeFavorite } from '../../helper'
+
+//style
 import hyperspace from '../../assets/images/hyper-space.gif'
 import lightsaber from '../../assets/images/lightsaber.gif'
 import trench from '../../assets/images/trench.gif'
