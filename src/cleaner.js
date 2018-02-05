@@ -48,7 +48,8 @@ const people = async (data) => {
 const planets = async (data) => {
   const planetArray = data.results.map(async (planet) => {
     const { name, terrain, population, climate } = planet
-    const getResidents = planet.residents.map(async (resident) => await getSingleUrl(resident))
+    const getResidents = planet.residents.map(
+      async (resident) => await getSingleUrl(resident))
     const residentData = await Promise.all(getResidents)
     const residents = residentData.map(resident => resident.name)
 

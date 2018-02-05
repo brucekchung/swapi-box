@@ -20,6 +20,7 @@ Favorites.propTypes = {
   data: arrayOf(object),
   type: string,
   favorite: func,
+  favoriteData: arrayOf(object)
 }
 
 export default Favorites

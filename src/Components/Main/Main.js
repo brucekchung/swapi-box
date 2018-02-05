@@ -44,7 +44,7 @@ const Main = ({ allData, favorite }) => (
 
 Main.propTypes = {
   favorite: func.isRequired,
-  allData: object.isRequired,
+  allData: object.isRequired
 }
 
 export default Main

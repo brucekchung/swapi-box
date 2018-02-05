@@ -13,7 +13,8 @@ const Nav = ({ handleClick }) => (
 )
 
 Nav.propTypes = {
-  onClick: func
+  onClick: func,
+  handleClick: func
 }
 
 export default Nav

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { cleanData } from './cleaner'
 
 describe('cleaner', () => {

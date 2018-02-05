@@ -1,6 +1,8 @@
 import React from 'react'
 import './Prologue.css'
 import Theme from '../../assets/sounds/Theme.mp3'
+import { arrayOf, object } from 'prop-types'
+
 
 const Prologue = ({ filmData }) => {
   const { episode, year, title, prologue } = filmData
@@ -15,11 +17,15 @@ const Prologue = ({ filmData }) => {
             <h4>Episode: {episode}, {year}</h4>
             <h1>{title}</h1>
           </div>
-            <p>{prologue}</p>
+          <p>{prologue}</p>
         </div>
       </section>
     </div>
   )
+}
+
+Prologue.propTypes = {
+  filmData: arrayOf(object)
 }
 
 export default Prologue

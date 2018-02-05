@@ -20,6 +20,7 @@ Vehicles.propTypes = {
   data: arrayOf(object),
   type: string,
   favorite: func,
+  vehicleData: arrayOf(object)
 }
 
 export default Vehicles

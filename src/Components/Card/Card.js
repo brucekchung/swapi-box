@@ -1,14 +1,14 @@
 import React from 'react'
 import Entry from '../Entry/Entry'
 import './Card.css'
-import { func, arrayOf, string } from 'prop-types'
+import { func, arrayOf, string, object } from 'prop-types'
 
 const Card = ({ data, type, favorite }) => {
   const entries = Object.entries(data)
   const name = entries.shift()
   const last = entries.slice(entries.length - 1)
   const isFavoriteCard = () => {
-    if(last[0][1] === true) {
+    if (last[0][1] === true) {
       return 'favorite'
     } else return ''
   }
@@ -32,6 +32,9 @@ Card.propTypes = {
   className: string,
   id: string,
   onClick: func,
+  favorite: func,
+  type: string,
+  data: object
 }
 
 export default Card
