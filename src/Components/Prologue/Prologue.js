@@ -1,7 +1,7 @@
 import React from 'react'
 import './Prologue.css'
 import Theme from '../../assets/sounds/Theme.mp3'
-import { arrayOf, object } from 'prop-types'
+import { arrayOf, object, oneOfType } from 'prop-types'
 
 
 const Prologue = ({ filmData }) => {
@@ -25,7 +25,7 @@ const Prologue = ({ filmData }) => {
 }
 
 Prologue.propTypes = {
-  filmData: arrayOf(object)
+  filmData: oneOfType([arrayOf(object), object])
 }
 
 export default Prologue
