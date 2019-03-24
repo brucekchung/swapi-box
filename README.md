@@ -12,7 +12,7 @@ StarWars-themed card display.  Utilizing React, React-Router, and tested with Je
 
 to run and install swapi-box on your machine, run:
 
-```git clone git@github.com:brucekchung/gametime.git```
+```git clone git@github.com:brucekchung/swapi-box.git```
 
 into the desired folder
 
